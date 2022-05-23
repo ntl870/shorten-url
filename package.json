@@ -1,0 +1,17 @@
+{
+  "name": "shorten-url",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "lerna run start",
+    "dev": "lerna run dev",
+    "test": "lerna run test",
+    "diff": "lerna diff"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
