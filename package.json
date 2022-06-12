@@ -6,7 +6,8 @@
     "start": "lerna run start",
     "dev": "lerna run dev --stream",
     "test": "lerna run test",
-    "diff": "lerna diff"
+    "diff": "lerna diff",
+    "build": "lerna run build"
   },
   "keywords": [],
   "author": "",
