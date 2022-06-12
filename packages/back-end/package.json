@@ -5,7 +5,7 @@
   "main": "index.ts",
   "type": "commonjs",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "tsc && nodex .dist/index.js",
     "dev": "nodemon index.ts",
     "build": "tsc",
     "migrate-prod": "knex migrate:latest --migrations-directory db/migrations --env production"
