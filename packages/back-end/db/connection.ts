@@ -1,8 +1,8 @@
-import mysql from "mysql";
-
+import mysql from 'mysql'
+console.log(process.env.MYSQL_ADDON_HOST)
 export const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "okita123",
-  database: "shorten_url",
-});
+  host: process.env.MYSQL_ADDON_HOST,
+  database: process.env.MYSQL_ADDON_DB,
+  user: process.env.MYSQL_ADDON_USER,
+  password: process.env.MYSQL_ADDON_PASSWORD
+})

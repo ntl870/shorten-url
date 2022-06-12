@@ -1,37 +1,35 @@
-import { GetServerSideProps, NextPage, GetServerSidePropsContext } from "next";
+import { GetServerSideProps, NextPage, GetServerSidePropsContext } from 'next'
 
 const RedirectUrl: NextPage = () => {
-  return <></>;
-};
+  return <></>
+}
 
-export const getServerSideProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   try {
-    const { url } = context.query;
-    const res = await fetch(`http://localhost:4000/v1/url?url=${url}`);
-    const data = await res.json();
-    if (data.success) {
+    const { url } = context.query
+    const res = await fetch(`http://localhost:4000/v1/url?url=${url}`)
+    const { success, realUrl, message = '' } = await res.json()
+    if (success) {
       return {
         redirect: {
-          destination: `${data.realUrl}`,
-          permanent: false,
+          destination: `https://${realUrl}`,
+          permanent: true
         },
         props: {
-          redirectUrl: data.realUrl,
-        },
-      };
+          redirectUrl: realUrl
+        }
+      }
     }
-    throw new Error();
+    throw new Error(message)
   } catch (e) {
     return {
       props: {},
       redirect: {
-        destination: "/404",
-        permanent: false,
-      },
-    };
+        destination: '/404',
+        permanent: false
+      }
+    }
   }
-};
+}
 
-export default RedirectUrl;
+export default RedirectUrl

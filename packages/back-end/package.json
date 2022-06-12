@@ -6,7 +6,9 @@
   "type": "commonjs",
   "scripts": {
     "start": "ts-node index.ts",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "build": "tsc",
+    "migrate-prod": "knex migrate:latest --migrations-directory db/migrations --env production"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "knex": "^2.1.0",
     "mysql": "^2.18.1",
     "ts-node": "^10.8.0",
     "tsc": "^2.0.4",
