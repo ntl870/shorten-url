@@ -7,7 +7,8 @@
     "dev": "lerna run dev --stream",
     "test": "lerna run test",
     "diff": "lerna diff",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "bootstrap": "yarn install && lerna exec yarn install"
   },
   "keywords": [],
   "author": "",
